@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <input id="email" type="text" placeholder="email">
+        <input id="password" type="password" placeholder="passwrd">
+        <button type="button" onclick="start(event)">submit</button>
+        <button type="button" id="btn">create</button>
+        <div id="display">
+           
+        </div>
+     </form>
+        <input type="text" name="" id="input" placeholder="ask me">
+      <button onclick="data()">find</button>
+</body>
+<script>
+        const email = document.getElementById("email")
+        const password = document.getElementById("password")
+        const btn = document.getElementById("btn")
+        let display = document.getElementById("display")
+
+         let arr = []
+        function start(ev){
+            ev.preventDefault()
+            const obj = {
+                email: email.value,
+                password: password.value
+            }
+     arr.push(obj)
+     console.log(arr)
+     display.innerHTML= ""
+        arr.forEach((element)=>{
+display.innerHTML+=`
+
+    <h1>${element.email}</h1>
+    <p>${element.password}</p>
+    `
+        })
+
+        }
+
+        
+
+       btn.addEventListener("mouseout", ()=>{
+        console.log(email.value)
+            console.log(password.value)
+       })
+
+     let arr2 =["bola","seun","kemi"]
+     let input = document.getElementById("input")
+     function data(){
+         let found = arr2.find((el)=> el === input.value)
+        //  if (found){
+        //     alert("jesus")
+        //  }else{
+        //     alert("hell")
+        //  }
+
+         found ? alert("jesus") : alert("hell!!")
+         
+         }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+</script>
+</html>
